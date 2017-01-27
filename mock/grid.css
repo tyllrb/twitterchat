@@ -1,0 +1,44 @@
+.row > * {
+  float: left;
+}
+.row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.row > .col1 {
+  width: 8.333333%;
+}
+.row > .col2 {
+  width: 16.666666%;
+}
+.row > .col3 {
+  width: 25%;
+}
+.row > .col4 {
+  width: 33.333333%;
+}
+.row > .col5 {
+  width: 41.666666%;
+}
+.row > .col6 {
+  width: 50%;
+}
+.row > .col7 {
+  width: 58.333333%;
+}
+.row > .col8 {
+  width: 66.666666%;
+}
+.row > .col9 {
+  width: 75%;
+}
+.row > .col10 {
+  width: 83.333333%;
+}
+.row > .col11 {
+  width: 91.666666%;
+}
+.row > .col12 {
+  width: 100%;
+}
