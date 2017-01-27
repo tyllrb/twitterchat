@@ -91,6 +91,7 @@ body {
 
 .chatPanel {
     height: 90%;
+    position: relative;
 }
 
 .activeUsers {
@@ -121,22 +122,36 @@ body {
 }
 
 .chatMessages {
-    position: relative;
 }
 
 .userMessage {
     position: absolute;
     bottom: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+}
+
+.userMessage input {
+    padding: 10px;
+    font-size: 17px;
+    color: #666;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-top: 1px solid #e8ebeb;
 }
 
 .messages {
-    padding: 30px;
+    height: 90%;
+    overflow-y: scroll;
 }
 
 .message .profile {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+    padding: 20px;
 }
 
 .message .profile img {
