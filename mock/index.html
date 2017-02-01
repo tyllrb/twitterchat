@@ -5,17 +5,33 @@
     <link rel="stylesheet" href="grid.css" />
 
     <script src="https://use.fontawesome.com/014224a308.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css" />
   </head>
 
   <body>
-    <div class="header">
-      <div class="title">twitterchat</div>
-    </div>
-
+    <script>
+      function change() {
+        console.log('fuck');
+        document.getElementById('userPanelContainer').className += ' close';
+        document.getElementById('userPanelContainer .userPanel .userAccount').style.display = 'block';
+        document.getElementById('userPanelContainer .userPanel .userLogin').style.display = 'none';
+      }
+    </script>
     <div class="main">
       <div class="row">
-        <div class="col2">
+        <div class="col2" id="userPanelContainer" onclick="change()">
           <div class="userPanel">
+            <div class="header">
+              <div class="title"><i class="fa fa-comments-o" aria-hidden="true"></i> twitterchat</div>
+            </div>
+
+            <div class="userLogin">
+              <div class="logo">
+                <i class="fa fa-twitter-square hvr-pulse-grow" aria-hidden="true"></i>
+              </div>
+              Sign in with Twitter
+            </div>
+
             <div class="userAccount">
               <div class="userProfilePic">
                 <img src="http://vignette3.wikia.nocookie.net/sopranos/images/d/d4/Tonyexpand.jpg/revision/latest?cb=20080630134836" />
@@ -23,51 +39,125 @@
               <div class="userInfo">
                 <div class="userName">@tyler</div>
               </div>
+
+              <div class="logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+              </div>
             </div>
           </div>
         </div>
         <div class="col2">
-          <div class="activityPanel">
-            <div class="activityItem">
-              <input class="activitySearch" placeholder="Search for hashtag..." />
-            </div>
-            <div class="activityItem">
-              <div class="hashtag">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </div>
-              <div class="detail">
-                <div class="name">#leafs</div>
-                <div class="tweetcount">122 tweets</div>
-              </div>
-            </div>
-            <div class="activityItem">
-              <div class="hashtag">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </div>
-              <div class="detail">
-                <div class="name">#raptors</div>
-                <div class="tweetcount">12 tweets</div>
+          <div class="activityPanel" id="activityPanelContainer">
+            <div class="activitySearch">
+              <input class="activitySearchInput" placeholder="Search for hashtag..." />
+
+              <div class="activitySearchResults">
+                <div class="activitySearchItem">
+                  #Jays
+                </div>
+                <div class="activitySearchItem">
+                  #trump2017
+                </div>
+                <div class="activitySearchItem">
+                  #bigHashTagLetsSeeHowLongWeCanGetIt
+                </div>
+                <div class="activitySearchItem">
+                  #hashbag
+                </div>
               </div>
             </div>
-            <div class="activityItem">
-              <div class="hashtag">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+            <div class="activityItems">
+              <div class="activityItem">
+                <div class="row">
+                  <div class="col4">
+                    <div class="hashtag">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <div class="col8">
+                    <div class="detail">
+                      <div class="name">#leafsFor...</div>
+                      <div class="tweetcount">122 tweets</div>
+                    </div>
+                  </div>
+
+                  <div class="close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  </div>
+                </div>
               </div>
-              <div class="detail">
-                <div class="name">#MAGA</div>
-                <div class="tweetcount">533 tweets</div>
+              <div class="activityItem">
+                <div class="row">
+                  <div class="col4">
+                    <div class="hashtag">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <div class="col8">
+                    <div class="detail">
+                      <div class="name">#leafsFor...</div>
+                      <div class="tweetcount">122 tweets</div>
+                    </div>
+                  </div>
+
+                  <div class="close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="activityItem selected">
+                <div class="row">
+                  <div class="col4">
+                    <div class="hashtag">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <div class="col8">
+                    <div class="detail">
+                      <div class="name">#raptors</div>
+                      <div class="tweetcount">12 tweets</div>
+                    </div>
+                  </div>
+
+                  <div class="close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="activityItem">
+                <div class="row">
+                  <div class="col4">
+                    <div class="hashtag">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+                  <div class="col8">
+                    <div class="detail">
+                      <div class="name">#MAGA</div>
+                      <div class="tweetcount">533 tweets</div>
+                    </div>
+                  </div>
+
+                  <div class="close">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col8">
-          <div class="chatPanel">
+          <div class="chatPanel" id="chatPanelContainer">
             <div class="activeUsers">
               <div class="label">
                 Users
               </div>
               <div class="user">
-                <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
+                <img title="@username" src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
               </div>
               <div class="user">
                 <img src="https://devcentral.f5.com/profilepic.ashx?userid=53457&w=48&h=48" />
@@ -81,8 +171,8 @@
               <div class="messages">
                 <div class="message">
                   <div class="profile">
-                    <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
-                    <div class="name">@bobdole</div>
+                    <img src="http://cabsonline.ca/wp-content/uploads/avatars/528/20ea144d92c3cbe55812914178034369-bpthumb.png" />
+                    <div class="name">@timmy345</div>
                   </div>
                   <div class="content">
                     don't be serious about anything like really what does it all account for?
@@ -101,18 +191,8 @@
 
                 <div class="message">
                   <div class="profile">
-                    <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
-                    <div class="name">@bobdole</div>
-                  </div>
-                  <div class="content">
-                    this is what 140 characters look like, its the max length of the possible message, its a good thing to know. That was 100, this  is the end
-                  </div>
-                </div>
-
-                <div class="message">
-                  <div class="profile">
-                    <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
-                    <div class="name">@bobdole</div>
+                    <img src="https://devcentral.f5.com/profilepic.ashx?userid=53457&w=48&h=48" />
+                    <div class="name">@stevert983</div>
                   </div>
                   <div class="content">
                     don't be serious about anything like really what does it all account for?
@@ -121,8 +201,8 @@
 
                 <div class="message">
                   <div class="profile">
-                    <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
-                    <div class="name">@bobdole</div>
+                    <img src="http://cabsonline.ca/wp-content/uploads/avatars/528/20ea144d92c3cbe55812914178034369-bpthumb.png" />
+                    <div class="name">@timmy345</div>
                   </div>
                   <div class="content">
                     rude tbh
@@ -145,6 +225,16 @@
                     <div class="name">@bobdole</div>
                   </div>
                   <div class="content">
+                    this is what 140 characters look like, its the max length of the possible message, its a good thing to know. That was 100, this  is the end
+                  </div>
+                </div>
+
+                <div class="message">
+                  <div class="profile">
+                    <img src="http://seriousplaypro.com/wp-content/uploads/avatars/1/57dfd27c66bfd-bpthumb.jpg" />
+                    <div class="name">@bobdole</div>
+                  </div>
+                  <div class="content">
                     don't be serious about anything like really what does it all account for?
                   </div>
                 </div>
@@ -152,7 +242,14 @@
             </div>
 
             <div class="userMessage">
-              <input placeholder="Say something..." />
+              <div class="userMessageWrapper">
+                <input placeholder="Say something..." />
+                <div class="profile">
+                  <i class="fa-comment fa userMessageIcon" aria-hidden="true">
+                    <div class="characterCount">140</div>
+                  </i>
+                </div>
+              </div>
             </div>
           </div>
         </div>

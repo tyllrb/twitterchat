@@ -12,28 +12,137 @@ body {
     min-height: 100%;
 }
 
+.clear {
+    clear: both;
+}
+
+/* #45c8d9; */
 .header {
-    height: 10%;
-    background: #45c8d9;
+    background: #9b59b6;
+  text-align: center;
 }
 
 .header .title {
-    padding: 20px;
+  padding: 19px;
     font-size: 20px;
     color: #fff;
 }
 
-    .userPanel {
-        background: #f5f7f7;
+.main {
+    height: 100%;
+  overflow: hidden;
+}
+
+#userPanelContainer.close {
+  animation-duration: 1s;
+  animation-name: close;
+  animation-fill-mode: forwards;
+}
+
+#userPanelContainer.open {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: open;
+}
+
+#userPanelContainer {
+  width: 100%;
+}
+
+@keyframes close {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 16.6666%;
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 16.6666%;
+  }
+}
+
+@keyframes open {
+  from {
+    width: 16.6666%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes open {
+  from {
+    width: 16.6666%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.userPanel {
+    background: #f5f7f7;
     border-right: 1px solid #e8ebeb;
-    height: 90%;
+    height: 100%;
+}
+
+.userAccount:hover .logout {
+    display: block;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
+
+.userLogin {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.userLogin .logo {
+  font-size: 160px;
+  color: #ccc;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.userLogin .logo i {
+  background-color: #f5f7f7;
+  color: #ccc;
+}
+
+.userLogin .logo i:hover {
+  cursor: pointer;
+  color: #9b59b6;
 }
 
 .userAccount {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 50px;
     border-bottom: 1px solid #e8ebeb;
     text-align: center;
+    position: relative;
+    display: none;
+}
+
+.userAccount .logout {
+    position: absolute;
+    bottom: 20px;
+    color: #9b59b6;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.userAccount .logout:hover {
+    cursor: pointer;
 }
 
 .userProfilePic img {
@@ -48,15 +157,60 @@ body {
     color: #444;
 }
 
+#activityPanelContainer {
+
+}
+
 .activityPanel {
     background: #f5f7f7;
     border-right: 1px solid #e8ebeb;
-    height: 90%;
+    height: 100%;
+  overflow-y: scroll;
+}
+
+.activityItem .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #666;
+    display: none;
+    opacity: 0.5;
+}
+
+.activityItems {
+  margin-top: 60px;
 }
 
 .activityItem {
     border-bottom: 1px solid #e8ebeb;
     padding: 10px 20px 10px 20px;
+    position: relative;
+}
+
+.activitySearch {
+  border-bottom: 1px solid #e8ebeb;
+  padding: 10px 20px 10px 20px;
+  position: fixed;
+  background: #f5f7f7;
+  z-index: 100;
+  width: 13%;
+}
+
+.activityItem:hover {
+    background: #fff;
+    cursor: pointer;
+}
+
+.activityItem:hover .close {
+    display: block;
+}
+
+.activityItem .close:hover {
+    opacity: 1;
+}
+
+.activityItem.selected {
+    background: #fff;
 }
 
 .activityItem .hashtag {
@@ -68,11 +222,14 @@ body {
 
 .activityItem .detail {
     display: inline-block;
+    word-wrap: break-word;
+    width: 100%;
 }
 
 .activityItem .detail .name {
     font-size: 16px;
     color: #555;
+    word-wrap: break-word;
 }
 
 .activityItem .detail .tweetcount {
@@ -80,17 +237,59 @@ body {
     color: #bbb;
 }
 
-.activitySearch {
+.activitySearchInput {
     font-size: 15px;
     outline: 0;
     width: 100%;
     background: #f5f7f7;
-    border: 0;
+    border: 1px solid #f5f7f7;
     height: 40px;
+    position: relative;
+    z-index: 101;
+    padding: 10px;
+    top: 1px;
+}
+
+.activitySearchInput:focus {
+    background: #fff;
+    border: 1px solid #e8ebeb;
+    border-bottom: 1px solid #fff;
+}
+
+.activitySearchInput:focus + .activitySearchResults {
+    display: block;
+}
+
+.activitySearchResults {
+    -webkit-box-shadow: 6px 6px 12px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 12px -8px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 12px -8px rgba(0,0,0,0.75);
+    position: absolute;
+    background: #fff;
+    z-index: 100;
+    width: 120%;
+    border-left: 1px solid #e8ebeb;
+    border-right: 1px solid #e8ebeb;
+    border-bottom: 1px solid #e8ebeb;
+    border-top: 1px solid #e8ebeb;
+    display: none;
+}
+
+.activitySearchItem {
+    padding: 16px 10px 16px 10px;
+    color: #666;
+    word-wrap: break-word;
+    border-bottom: 1px solid #e8ebeb;
+}
+
+.activitySearchItem:hover {
+    background: #9b59b6;
+    cursor: pointer;
+    color: #fff;
 }
 
 .chatPanel {
-    height: 90%;
+    height: 100%;
     position: relative;
 }
 
@@ -121,6 +320,10 @@ body {
     color: #666;
 }
 
+#chatPanelContainer {
+
+}
+
 .chatMessages {
 }
 
@@ -129,29 +332,89 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    background: #fff;
+    padding: 10px;
+    border-top: 1px solid #e8ebeb;
+    background: #f5f7f7;
+}
+
+.userMessageWrapper {
+    position: relative;
+    height: 40px;
+}
+
+.userMessage .profile {
+    display: inline-block;
+}
+
+.userMessageIcon {
+    color: #ccc;
+    font-size: 35px !important;
+    vertical-align: middle;
+    position: absolute;
+    left: 0px;
 }
 
 .userMessage input {
     padding: 10px;
     font-size: 17px;
-    color: #666;
-    width: 100%;
+    color: #ccc;
+    position: absolute;
+    width: 80%;
+    left: 40px;
     border: 0;
     outline: 0;
-    border-top: 1px solid #e8ebeb;
+    display: inline-block;
+    background: inherit;
+}
+
+.userMessage .characterCount {
+  position: absolute;
+  font-size: 13px;
+  top: 11px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-style: normal;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.userMessage input::selection {
+  color: #fff;
+  background: #9b59b6;
+}
+
+.userMessage input:focus {
+    color: #333;
+}
+
+.userMessage input:focus + .profile .userMessageIcon {
+    color: #333 !important;
+}
+
+.userMessage input:focus ~ .characterCount {
+  color: #333;
+}
+
+.userMessage .details {
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  bottom: -10px;
+  border-left: 1px solid #e8ebeb;
+  padding: 10px;
 }
 
 .messages {
-    height: 90%;
+    height: 80%;
     overflow-y: scroll;
 }
 
 .message .profile {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
     padding: 20px;
+    text-align: center;
 }
 
 .message .profile img {
@@ -160,7 +423,8 @@ body {
 }
 
 .message .name {
-
+    max-width: 100px;
+    word-wrap: break-word;
 }
 
 .message .content {
@@ -168,7 +432,10 @@ body {
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background: #45c8d9;
+    background: #9b59b6;
+    color: #eee;
     padding: 20px;
     border-bottom: 1px solid #fff;
+    max-width: 76%;
+    line-height: 20px;
 }
