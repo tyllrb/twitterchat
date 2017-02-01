@@ -1,0 +1,174 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+.header {
+    height: 10%;
+    background: #45c8d9;
+}
+
+.header .title {
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+    .userPanel {
+        background: #f5f7f7;
+    border-right: 1px solid #e8ebeb;
+    height: 90%;
+}
+
+.userAccount {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #e8ebeb;
+    text-align: center;
+}
+
+.userProfilePic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.userInfo {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+}
+
+.activityPanel {
+    background: #f5f7f7;
+    border-right: 1px solid #e8ebeb;
+    height: 90%;
+}
+
+.activityItem {
+    border-bottom: 1px solid #e8ebeb;
+    padding: 10px 20px 10px 20px;
+}
+
+.activityItem .hashtag {
+    display: inline-block;
+    font-size: 40px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.activityItem .detail {
+    display: inline-block;
+}
+
+.activityItem .detail .name {
+    font-size: 16px;
+    color: #555;
+}
+
+.activityItem .detail .tweetcount {
+    font-size: 13px;
+    color: #bbb;
+}
+
+.activitySearch {
+    font-size: 15px;
+    outline: 0;
+    width: 100%;
+    background: #f5f7f7;
+    border: 0;
+    height: 40px;
+}
+
+.chatPanel {
+    height: 90%;
+    position: relative;
+}
+
+.activeUsers {
+    background: #f5f7f7;
+    border-bottom: 1px solid #e8ebeb;
+    padding: 10px;
+}
+
+.activeUsers .user {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.activeUsers .user img {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+
+.activeUsers .label {
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    color: #666;
+}
+
+.chatMessages {
+}
+
+.userMessage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+}
+
+.userMessage input {
+    padding: 10px;
+    font-size: 17px;
+    color: #666;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-top: 1px solid #e8ebeb;
+}
+
+.messages {
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.message .profile {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.message .profile img {
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+.message .name {
+
+}
+
+.message .content {
+    display: inline-block;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #45c8d9;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+}
